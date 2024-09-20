@@ -16,7 +16,11 @@ describe(smp_1)
 tab_prof=table(smp_1$prof)
 # un diagramme en bar
 pie(tab_prof,col=rainbow(10),main="Distribution de la variable profession")
+ggplot(smp_1,aes(x=prof,fill=prof))+
+                  geom_bar()+
+                  coord_flip()
 # Histogramme de l'age
+
 ggplot(smp_1,aes(x=age))+
                   geom_histogram(fill="blue",binwidth = 5)+
                   ggtitle("Diagramme en Histogramme de l'age")
@@ -31,3 +35,4 @@ savehistory("commande.R")
 hist(smp_1$age)
 lines(density(smp_1$age,na.rm = T),col="red")
 # Continuer le code pour faire la visualisation
+
