@@ -35,4 +35,5 @@ savehistory("commande.R")
 hist(smp_1$age)
 lines(density(smp_1$age,na.rm = T),col="red")
 # Continuer le code pour faire la visualisation
+# with ggplot
 
