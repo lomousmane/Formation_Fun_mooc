@@ -8,6 +8,7 @@ str(smp_2)
 smp_2$dep_cons<-factor(smp_2$dep.cons,levels = c(0,1),
                     labels =c("Non","Oui"))
 str(smp_2)
+smp_2$prof<-factor(smp_2$prof)
 unique(smp_2$suicide.past)
 # somme des valeurs de la variable
 table(smp_2$separation)
