@@ -19,3 +19,16 @@ df_age=subset(smp_2,age<35)
 quantile(df_age$duree,na.rm = T,probs=c(0.25,0.50,0.75))
 # calcul smp suicide
 mean(smp_2[smp_2$suicide.past==1,"dur.interv"],na.rm=T)
+
+
+# exo faculctatifs
+# histogramme de lage avec 6 classes
+hist(smp_2$age,nclass=6,main="histogramme age",xlab="age")
+is.na(smp_2[c(20, 221, 342, 446, 531),])
+# proportion dindividus sans emploi
+df_emploi=subset(smp_2,prof=="sans emploi")
+tab=table(df_emploi$prof)
+prop.table(table(smp_2$prof)*100)
+# age >20 et age<=30
+df_age=subset(smp_2,age>=20 & age<=30)
+nrow(df_age)
