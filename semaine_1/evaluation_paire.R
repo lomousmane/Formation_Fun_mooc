@@ -6,7 +6,7 @@ View(satisfaction_hopital)
 # structure
 str(satisfaction_hopital)
 dim(satisfaction_hopital)
-# les trois variables catégorielles (sexe,service,prof)
+# 1. les trois variables catégorielles (sexe,service,prof)
 ## Présentons les pourcentage sexe
 tab=table(satisfaction_hopital$sexe)
 tab
@@ -19,17 +19,17 @@ round(prop.table(tab),3)
 tab=table(satisfaction_hopital$profession)
 tab
 round(prop.table(tab),3)
-# Resumes des variables numériques
+# 2.Pour les autres variables, donnez de façon synthétique : moyenne, médiane, écart-type, minimum, maximum, nombre de données disponibles (non manquantes).
 install.packages("prettyR")
 library(prettyR)
 describe(satisfaction_hopital[c("age","amelioration.sante",
                                   "amelioration.moral","recommander","score.relation",
                                 "score,information")],num.desc = c("min","max","mean" ,"median","sd","valid.n"))
 
-# Faites un histogramme du score de relation (score.relation).
+# 3.Faites un histogramme du score de relation (score.relation).
 hist(satisfaction_hopital$score.relation, xlab="score relation
     ",ylab="frequence",main="Histogramme score relation",col="blue")
-# boxplot la distribution du score de relation chez les hommes et les femmes.
+# 4.boxplot la distribution du score de relation chez les hommes et les femmes.
 boxplot(satisfaction_hopital$score.relation~satisfaction_hopital$sexe,xlab="sexe",ylab="score relation",
         ,main="Diagramme en boxplot",col=rainbow(10))
 
