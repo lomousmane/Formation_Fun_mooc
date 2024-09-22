@@ -6,6 +6,14 @@ smp_1$ed.b<-ifelse(smp_1$ed>2,1,0)
 tab=table(smp_1$ed.b,smp_1$dep.cons,
           deparse.level =2)
 tab
+# la moyenne d'age par groupe de profession
+df_age=aggregate(age~prof,smp_1,mean)
+df_age_prof=as.data.frame(df_age)
+library(tidyverse)
+ggplot(df_age_prof,aes(x=prof,y=age,fill=prof))+
+                  geom_col()+
+                  theme_bw()+
+                  coord_flip()
 chisq.test(tab,correct = F)
 # verifier la correlation
 cor(smp_1$age,smp_1$rs,use="complete.obs")
