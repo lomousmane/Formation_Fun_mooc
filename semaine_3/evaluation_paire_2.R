@@ -2,7 +2,7 @@ setwd("C:/mes dossiers/Formation_fun_mooc_2024/données")
 library(readr)
 satisfaction_hopital <- read_csv2("satisfaction_hopital.csv")
 str(satisfaction_hopital)
-unique(satisfaction_hopital$recommander)
+unique(satisfaction_hopital$recommander) # c'est pour voir les modalités
 # 1. Transformez la variable « recommander » en une variable binaire « recommander.b » :
 satisfaction_hopital$recommander.b<-ifelse(satisfaction_hopital$recommander>1,1,0)
 # 2. A l’aide d’un odds-ratio, estimez la force de l’association entre « recommander.b » et « sexe ».
@@ -44,7 +44,7 @@ var.test(score.relation~sexe,satisfaction_hopital)
 ## On a utilisé le test d'égalité des variances avec var.test
 ## le pvalue>0.05 montre qu'on accepte H0 donc il ya égalité des variances entre les hommes et femmes 
 # Test de comparaison  des moyennes avec le test de student
-t.test(score.relation~sexe,satisfaction_hopital,var.equal=F)
+t.test(score.relation~sexe,satisfaction_hopital,var.equal=T)
 # le pvalue >0.05 donc on accepte l'hypothèse H0 pas de
 ## de différence significative entre la moyenne de score entre les sexes.
 
