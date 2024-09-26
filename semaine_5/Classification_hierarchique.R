@@ -18,7 +18,7 @@ library(missMDA)
 nb <- estim_ncpPCA(smp[,var],ncp.min=0,ncp.max=5,method.cv="Kfold",nbsim=50)
 imputed <- imputePCA(smp[,var],ncp=nb$ncp)
 res.pca <- PCA(imputed$completeObs)
-# hierarchical class principal component
+# hierarchical clustering principal component
 res_cah<-HCPC(res.pca,graph = F)
 plot(res_cah)
 library(ggpubr)
