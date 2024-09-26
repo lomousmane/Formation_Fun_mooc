@@ -31,3 +31,10 @@ fviz_cluster(res_cah,
              main = "Factor map"
 )
 
+data(wine)
+View(wine)
+famd=FAMD(wine,graph = F)
+eig_va=get_eigenvalue(famd)
+df=as.data.frame(eig_va)
+fm_var=get_famd_var(famd,"quali.var")
+
