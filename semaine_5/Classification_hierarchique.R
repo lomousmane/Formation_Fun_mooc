@@ -15,7 +15,8 @@ library(factoextra)
 library(FactoMineR)
 library(missMDA)
 # Compute PCA with ncp = 3
-nb <- estim_ncpPCA(smp[,var],ncp.min=0,ncp.max=5,method.cv="Kfold",nbsim=50)
+nb <- estim_ncpPCA(smp[,var],ncp.min=0,ncp.max=5,
+                   method.cv="Kfold",nbsim=50)
 imputed <- imputePCA(smp[,var],ncp=nb$ncp)
 res.pca <- PCA(imputed$completeObs)
 # hierarchical clustering principal component
