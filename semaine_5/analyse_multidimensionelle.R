@@ -8,11 +8,11 @@ var<-c("age","n.enfant","dep.cons","scz.cons",
 # matrice de correlation
 cor<-cor(smp[,var],use="complete.obs")
 # visualiser avec corrplot
-install.packages("corrplot")
+#install.packages("corrplot")
 library(corrplot)
 corrplot(cor,method="circle")
 # ACP
-install.packages("psy")
+#install.packages("psy")
 library(psy)
 # Projection de  circulaire
 psy::mdspca(smp[,var])
