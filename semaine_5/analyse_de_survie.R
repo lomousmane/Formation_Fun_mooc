@@ -7,7 +7,7 @@ str(alc)
 # Résumé des données
 summary(alc)
 # Installer librairie 
-install.packages("survival")
+##install.packages("survival")
 library(survival)
 plot(survfit(Surv(alc$t,alc$SEVRE)~1),
      main="courbe d'abstinence des patients",
@@ -26,3 +26,4 @@ exp(mod$coefficients)
 # Visualiser le modéle
 par(mfrow=c(2,2))
 plot(cox.zph(mod))
+.libPaths()
