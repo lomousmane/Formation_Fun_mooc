@@ -8,9 +8,9 @@ mod=lm(age~prof+n.enfant ,data=smp)
 summary(mod)
 anova(mod)
 df_age=subset(smp,prof%in%c("sans emploi","cadre","ouvrier","employe"      
-                                      )& n.enfant<4)
+                                      ))
  View(df_age)
-tapply(df_age$age,df_age$prof,var)
+tapply(df_age$age,df_age$prof,sd)
 # modélisation
 model=glm(separation~age,smp,family=binomial("logit"))
 summary(model)
