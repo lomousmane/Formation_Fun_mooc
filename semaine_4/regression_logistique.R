@@ -16,6 +16,8 @@ twoby2(1-smp_1$suicide.hr,1-smp_1$abus)
 model=glm(suicide.hr~abus+discip+duree,smp_1,family="binomial")
 # resume model
 summary(model)
+# predictes
+predict(model)
 # les odd ration
 exp(model$coefficients)
 # avec la variable prof

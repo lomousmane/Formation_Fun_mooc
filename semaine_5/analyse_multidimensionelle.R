@@ -6,7 +6,7 @@ list(colnames(smp))
 var<-c("age","n.enfant","dep.cons","scz.cons",
        "grav.cons","rs","ed","dr")
 # matrice de correlation
-cor<-cor(smp[,var],use="complete.obs")
+cor<-round(cor(smp[,var],use="pairwise"),digits=2)
 # visualiser avec corrplot
 #install.packages("corrplot")
 library(corrplot)
