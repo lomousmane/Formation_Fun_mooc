@@ -49,6 +49,9 @@ cor=cor(satisfaction_hopital[,c("recommander.b","age",
 corrplot(cor,method="number")
 # hypothése 3
 " Les observations sont indépendantes"
+# Normalité des résidus
+hist(mod_log$residuals,main="histogramme des résidus",
+     xlab="résidus",ylab="frequency",col="blue")
 mod_log<-glm(recommander.b~age+sexe+score.information+
                             profession+amelioration.sante+
                             amelioration.moral+service,data=satisfaction_hopital
